@@ -40,6 +40,7 @@ const Guest = ({value}) => {
         }}
         styles={{ body: cardBodyStyles }} 
         hoverable
+        bordered={false}
       >
 
         <p>guests</p>

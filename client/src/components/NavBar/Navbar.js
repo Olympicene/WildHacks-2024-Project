@@ -24,7 +24,7 @@ const items = [
   getItem('Profile', '4', <IdcardOutlined />),
 ];
 
-const App = () => {
+const Navbar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -50,4 +50,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Navbar;
