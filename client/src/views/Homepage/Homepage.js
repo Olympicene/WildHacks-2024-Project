@@ -1,12 +1,7 @@
 import * as React from 'react'
 import Info from '../../components/Card/Info/Info';
+import MainInfo from '../../components/Card/MainInfo/maininfo';
 const Homepage = () => {
-    require("./Homepage.css");
-
-    let tosend = {
-        title : "card title",
-        text : "this is the text"
-    }
     return (
         <div>
             <Info details={tosend} />
