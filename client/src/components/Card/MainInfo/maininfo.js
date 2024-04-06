@@ -6,17 +6,21 @@ const MainInfo = ({details}) => {
 
   return (
     <Card
-      className='info-title'
       size="small"
       bordered={false}
       style={{
-        width: 300
+        width: 300,
+        backgroundColor:"#e9e9e9"
       }}
       hoverable 
     >
-      <p className="info-title">{details.name}, {details.age} </p>
-      <p className="info-text">{details.university}</p>
-      <p className="info-text">looking for {details.roomates} roomates</p>
+      <div className='main-div'>
+        <div className='main-div'>
+        <p className="info-title">{details.name}, {details.age} </p>
+        </div>
+        <p className="info-text">{details.university}</p>
+        <p className="info-text">looking for {details.roomates} roomates</p>
+      </div>
     </Card>
   );
 };
