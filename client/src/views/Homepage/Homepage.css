@@ -1,3 +1,10 @@
 body {
     background-color: #FAF9F6;
 }
+
+.home-container {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    margin-top: 4rem;
+} 

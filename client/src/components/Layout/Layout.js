@@ -39,7 +39,7 @@ const Layout = () => {
     const hobbiesList = Object.values(dummy.hobbies); 
 
     return (
-        <div className='layout-container' style={{ marginLeft: "15vw"}}>
+        <div className='layout-container'>
             <div className='semi-container'>
                 <Info title="hobbies" details={hobbiesList.join(", ")}/>
                 <Guest value={dummy.guests}/>

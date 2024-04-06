@@ -6,21 +6,22 @@ const SummaryCard = ({user}) => {
   require('./Summary.css');
 
   return (
-    <Card
-      size="small"
-      bordered={false}
-      style={{
-        width: 300,
-        background:"#bebbcc"
-      }}
-      hoverable 
-    >
-        <div>
+    <div style={{marginLeft:"2rem", marginRight:"2rem"}}>
+        <Card
+          size="small"
+          bordered={false}
+          style={{
+            width: 300,
+            background:"#bebbcc",
+            marginTop: "2.5rem"
+          }}
+          hoverable 
+        >
             <img className="match-img"src={womanimage}></img>
-        </div>
-        <p className="match-title">{user.name}, {user.age} </p>
-        <p className="match-text">{user.email}</p>
-    </Card>
+            <p className="match-title">{user.name}, {user.age} </p>
+            <p className="match-text">{user.email}</p>
+        </Card>
+    </div>
   );
 };
 
