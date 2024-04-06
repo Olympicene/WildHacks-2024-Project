@@ -20,10 +20,10 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem('Home', '1', <HomeOutlined style={{ fontSize: '110%'}} />),
-  getItem('Matches', '2', <WechatOutlined  style={{ fontSize: '110%'}}/>),
-  getItem('Map', '3', <GlobalOutlined  style={{ fontSize: '110%'}}/>),
-  getItem('Profile', '4', <IdcardOutlined  style={{ fontSize: '110%'}}/>),
+  getItem('Home', '1', <HomeOutlined style={{ fontSize: '100%'}} />),
+  getItem('Matches', '2', <WechatOutlined  style={{ fontSize: '100%'}}/>),
+  getItem('Map', '3', <GlobalOutlined  style={{ fontSize: '100%'}}/>),
+  getItem('Profile', '4', <IdcardOutlined  style={{ fontSize: '100%'}}/>),
 ];
 
 const Navbar = () => {
@@ -34,7 +34,16 @@ const Navbar = () => {
 
   return (
     <div style={{ height: '100vh', overflowY: 'auto'}}>
-      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '28vh', backgroundColor: '#b4d4ed' }}>
+      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '28vh'}}>
+      <Button
+        type="primary"
+        onClick={toggleCollapsed}
+        style={{
+          marginBottom: 1,
+        }}
+      >
+        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </Button>
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
