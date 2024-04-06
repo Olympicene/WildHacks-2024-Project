@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'antd';
 
 const MainInfo = ({details}) => {
-  require('./maininfo.css');
+  require('./MainInfo.css');
 
   return (
     <Card
@@ -16,7 +16,7 @@ const MainInfo = ({details}) => {
     >
       <p className="info-title">{details.name}, {details.age} </p>
       <p className="info-text">{details.university}</p>
-      <p className="info-text">Roommates: {details.roommates}</p>
+      <p className="info-text">looking for {details.roomates} roomates</p>
     </Card>
   );
 };
