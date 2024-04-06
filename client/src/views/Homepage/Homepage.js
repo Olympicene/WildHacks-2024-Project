@@ -1,7 +1,11 @@
 import * as React from 'react'
+import Info from '../../components/Card/Info/Info';
 const Homepage = () => {
     return (
-        <h1>This is Home Page</h1>
+        <div>
+            <h1>This is Home Page</h1>
+            <Info/>
+        </div>
     )
 }
 
