@@ -65,14 +65,6 @@ function DrawerAppBar(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  const routePath = (item) => {
-    return (
-        <Link to = {item.path}>
-                  <span>{item.title}</span>
-        </Link>
-    );
-  }
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -92,11 +84,10 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item.title} sx={{ color: '#fff' }}>
+              <Button key={item.title} sx={{ color: '#fff' }} component={Link} to={item.path}>
                 {item.title} 
               </Button>
             ))}
