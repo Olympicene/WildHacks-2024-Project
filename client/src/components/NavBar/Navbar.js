@@ -4,8 +4,10 @@ import {
   HomeOutlined,
   IdcardOutlined,
   WechatOutlined,
-} from '@ant-design/icons';
-import { Menu } from 'antd';
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+}from '@ant-design/icons';
+import { Button, Menu } from 'antd';
 
 function getItem(label, key, icon, children, type) {
   return {
@@ -32,7 +34,7 @@ const Navbar = () => {
 
   return (
     <div style={{ height: '100vh', overflowY: 'auto'}}>
-      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '40vh', backgroundColor: '#b4d4ed' }}>
+      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '28vh', backgroundColor: '#b4d4ed' }}>
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
