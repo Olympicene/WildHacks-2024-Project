@@ -5,7 +5,7 @@ import Navbar from '../../components/NavBar/Navbar';
 const Homepage = () => {
     require('./Homepage.css');
     return (
-        <div>
+        <div style={{display: 'flex'}}>
             <Navbar/>
             <Layout/>
         </div>

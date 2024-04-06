@@ -13,8 +13,8 @@ const Info = ({title,details}) => {
     return (
         <div>
             <Card bordered={false} hoverable={true} style={{ width: 300 }} styles={{ body: cardBodyStyles }} className='info-text-card'>
-            <p className='info-title'>{title}</p>
-            <p className='info-text'>{details}</p>
+            {/* <p className='info-title'>{title}</p>
+            <p className='info-text'>{details}</p> */}
             </Card>
         </div>
         );

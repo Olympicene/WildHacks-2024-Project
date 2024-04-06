@@ -18,10 +18,10 @@ function getItem(label, key, icon, children, type) {
 }
 
 const items = [
-  getItem('Home', '1', <HomeOutlined />),
-  getItem('Matches', '2', <WechatOutlined />),
-  getItem('Map', '3', <GlobalOutlined />),
-  getItem('Profile', '4', <IdcardOutlined />),
+  getItem('Home', '1', <HomeOutlined style={{ fontSize: '110%'}} />),
+  getItem('Matches', '2', <WechatOutlined  style={{ fontSize: '110%'}}/>),
+  getItem('Map', '3', <GlobalOutlined  style={{ fontSize: '110%'}}/>),
+  getItem('Profile', '4', <IdcardOutlined  style={{ fontSize: '110%'}}/>),
 ];
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div style={{ height: '100vh', overflowY: 'auto'}}>
-      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '28vh', backgroundColor: '#b4d4ed' }}>
+      <div style={{ position: 'fixed', top: 0, bottom: 0, left: 0, width: '40vh', backgroundColor: '#b4d4ed' }}>
         <Menu
           defaultSelectedKeys={['1']}
           defaultOpenKeys={['sub1']}
@@ -40,11 +40,8 @@ const Navbar = () => {
           theme="dark"
           inlineCollapsed={collapsed}
           items={items}
-          style={{ backgroundColor: '#152939', height: '100%', fontFamily: 'Poppins', fontSize: 20}}
+          style={{ backgroundColor: '#152939', height: '100%', fontFamily: 'Poppins', fontSize: "2rem", padding: "1rem"}}
         />
-      </div>
-      <div style={{ marginLeft: '20vh' }}> 
-
       </div>
     </div>
   );

@@ -34,20 +34,20 @@ const Layout = () => {
     require("./Layout.css");
 
     return (
-        <div className='layout-container'>
+        <div className='layout-container' style={{ marginLeft: "15vw"}}>
             <div className='semi-container'>
                 <Info title="hobbies" details={dummy.hobbies}/>
                 <Guest value={dummy.guests}/>
                 <Info title="substances" details={dummy.substances}/>
             </div>
 
-            <div lassName='semi-container'>
+            <div className='semi-container' style={{alignItems:"center"}}>
                 <Photo/>
                 <MainInfo details={dummy.user}/>
                 <Likes details={dummy.allLikes}/>
             </div>
 
-            <div lassName='semi-container'>
+            <div className='semi-container'>
                 <Info title="traits" details={dummy.traits}/>
                 <Info title="sleep schedule" details={dummy.sleep}/>
                 <Info title="dealbreakers" details={dummy.dealbreakers}/>
