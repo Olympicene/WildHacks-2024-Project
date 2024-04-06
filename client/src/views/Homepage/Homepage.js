@@ -1,17 +1,11 @@
 import * as React from 'react'
 import Info from '../../components/Card/Info/Info';
+import MainInfo from '../../components/Card/MainInfo/maininfo';
 const Homepage = () => {
-    const userDetails = {
-        name: "Sarvani",
-        age: 21,
-        university: "UCSD",
-        roommates: 2
-    };
-
     return (
         <div>
+            <Info details={tosend} />
             <h1>This is Home Page</h1>
-            <Info/>
         </div>
     )
 }
