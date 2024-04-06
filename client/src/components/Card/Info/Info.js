@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Card } from "antd";
 
 const Info = ({details}) => {
@@ -15,8 +16,6 @@ const Info = ({details}) => {
             <p className='info-title'>{details.title}</p>
             <p className='info-text'>{details.text}</p>
             </Card>
-        </div>
-    )
-}
-
+);
 export default Info;
+
