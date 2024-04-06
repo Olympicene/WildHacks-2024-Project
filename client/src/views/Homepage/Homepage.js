@@ -1,6 +1,5 @@
-import React from 'react';
-import MainInfo from '../../components/Card/MainInfo/maininfo';
-
+import * as React from 'react'
+import Info from '../../components/Card/Info/Info';
 const Homepage = () => {
     const userDetails = {
         name: "Sarvani",
@@ -12,9 +11,9 @@ const Homepage = () => {
     return (
         <div>
             <h1>This is Home Page</h1>
-            <MainInfo details={userDetails} />
+            <Info/>
         </div>
-    );
-};
+    )
+}
 
 export default Homepage;
