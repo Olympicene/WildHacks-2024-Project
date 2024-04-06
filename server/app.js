@@ -3,12 +3,18 @@ import cors from "cors"
 import cookieParser from "cookie-parser";
 import express from "express"
 
+// dirname fix because i am lazy
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 // === config server ===
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', `${__dirname}/views`);
 app.set('view engine', 'jade');
+app.use(express.static(`${__dirname}/views`));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -18,7 +24,7 @@ app.use(cookieParser());
 import { router as indexRouter } from './routes/index.js';
 app.use('/', indexRouter);
 
-import { user as userRouter } from './routes/users.js'
+import { router as usersRouter } from './routes/users.js';
 app.use('/users', usersRouter);
 
 // === view engine setup ===
@@ -43,4 +49,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+export { app }
+
