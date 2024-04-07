@@ -14,9 +14,13 @@ const LoginPage = () => {
 
     const [errors, setErrors] = useState('');
 
+    const handleFormChange = (changedValues, allValues) => {
+        console.log('Success:', allValues);
+        setFormData({email:allValues.email, password: allValues.password});
+    }
+
     const handleSubmit = async (values) => {
-        console.log('Success:', values);
-        await setFormData({email:values.email, password: values.password});
+        setFormData({email:values.email, password: values.password});
         console.log(JSON.stringify(formData))
 
       try {
@@ -86,6 +90,7 @@ const LoginPage = () => {
                 onFinish={handleSubmit}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
+                onValuesChange={handleFormChange}
             >
                 <Form.Item
                 label="email"
