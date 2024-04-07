@@ -9,20 +9,20 @@ const LikesInput = ({details}) => {
     };
 
   return (
-    <Card className="info-title" size="small" style={{ width: 200 }} styles = {{body:cardBodyStyles}}hoverable>
-      <div className="likes-container">
-        <div className="like-container">
-        <span className="like-text">Likes</span>
-        <Input placeholder="" value = {details?.like1}/>
-        <Input placeholder="" value = {details?.like2}/>
-        <Input placeholder="" value = {details?.like3}/>
+    <Card className="input-info-title" size="small" style={{ width: 300 }} styles = {{body:cardBodyStyles}}hoverable>
+      <div className="input-likes-container">
+        <div className="input-like-container">
+        <span className="input-info-title">Likes</span>
+        <Input className="input-info-text" placeholder="" value = {details?.like1}/>
+        <Input className="input-info-text" placeholder="" value = {details?.like2}/>
+        <Input className="input-info-text" placeholder="" value = {details?.like3}/>
         </div>
         <div className="vl"></div>
-        <div className="dislike-container">
-          <span className="dislike-text">Dislikes</span>
-          <Input placeholder="" value = {details?.dislike1}/>
-          <Input placeholder="" value = {details?.dislike2}/>
-          <Input placeholder="" value = {details?.dislike3}/>
+        <div className="input-dislike-container">
+          <span className="input-info-title">Dislikes</span>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike1}/>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike2}/>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike3}/>
         </div>
       </div>
     </Card>

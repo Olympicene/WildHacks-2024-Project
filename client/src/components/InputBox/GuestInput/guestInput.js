@@ -10,11 +10,11 @@ const GuestFreq = () => {
   };
   return (
     
-    <Radio.Group onChange={onChange} value={value} className='info-text'>
-      <Radio value={1} className='info-text'>Once a week </Radio>
-      <Radio value={2} className='info-text'>Twice a week</Radio>
-      <Radio value={3} className='info-text'>Thrice a week</Radio>
-      <Radio value={4} className='info-text'>More than three times a week</Radio>
+    <Radio.Group onChange={onChange} value={value} className='guest-info-text'>
+      <Radio value={1} className='guest-info-text'>Once a week </Radio>
+      <Radio value={2} className='guest-info-text'>Twice a week</Radio>
+      <Radio value={3} className='guest-info-text'>Thrice a week</Radio>
+      <Radio value={4} className='guest-info-text'>More than three times a week</Radio>
     </Radio.Group>
   );
 };
@@ -27,11 +27,11 @@ const GuestNumber = () => {
       setValue(e.target.value);
     };
     return (
-      <Radio.Group onChange={onChange} value={value} className='info-text'>
-        <Radio value={1} className='info-text'>1</Radio>
-        <Radio value={2} className='info-text'>2</Radio>
-        <Radio value={3} className='info-text'>3</Radio>
-        <Radio value={4} className='info-text'>4+</Radio>
+      <Radio.Group onChange={onChange} value={value} className='guest-info-text'>
+        <Radio value={1} className='guest-info-text'>1</Radio>
+        <Radio value={2} className='guest-info-text'>2</Radio>
+        <Radio value={3} className='guest-info-text'>3</Radio>
+        <Radio value={4} className='guest-info-text'>4+</Radio>
       </Radio.Group>
     );
   };
@@ -40,7 +40,7 @@ const GuestInput = () => {
     require('./guestInput.css');
   
     return (
-        <Card className="info-title"
+        <Card className="guest-info-title"
         size="small"
         style={{
           width: 300,
@@ -48,10 +48,10 @@ const GuestInput = () => {
         hoverable
       >
 
-        <p>Guests</p>
-        <p className="info-text-question">How often do you have guests?</p>
+        <p>guests</p>
+        <p className="guest-info-text-question">How often do you have guests?</p>
         <GuestFreq/> 
-        <p className="info-text-question">How many guests do you have?</p>
+        <p className="guest-info-text-question">How many guests do you have?</p>
         <GuestNumber/> 
       </Card>
     );

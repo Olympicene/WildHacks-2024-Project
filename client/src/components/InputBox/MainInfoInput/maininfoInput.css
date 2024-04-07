@@ -2,23 +2,23 @@ h1 {
     font-family: "Poppins", sans-serif;
 }
 
-.info-title {
+.main-info-title {
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
+    font-weight: 800;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 0;
-    color: #040316;
-    background-color: #d2e4fc;
+    color: #78787d;
+    background-color: #e9e9e9;
 }
 
-.info-text {
+.main-info-text {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 2rem;
-    margin : 0;
-    color: #5a569e;
-    background-color: #d2e4fc;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #78787d;
+    background-color: #e9e9e9;
 
 }
