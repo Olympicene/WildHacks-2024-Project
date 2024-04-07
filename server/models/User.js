@@ -38,8 +38,8 @@ const UserSchema = new mongoose.Schema(
                 type: Number,
             }
         },
-        sleepTime: { type: String },
-        wakeUpTime: { type: String },
+        sleepTime: { type: Number },
+        wakeUpTime: { type: Number },
         dealbreakers: { type: String },
         hobbies: [{ type: String }],
         numberOfGuests: {

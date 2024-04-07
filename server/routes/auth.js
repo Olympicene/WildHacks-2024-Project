@@ -1,5 +1,5 @@
 import express from "express"
-import { Register, Login, getUser, updateUser} from "../controllers/auth.js"
+import { Register, Login, getUser, updateUser, Populate} from "../controllers/auth.js"
 import Validate from "../middleware/validate.js"
 import { check } from "express-validator"
 import { Logout } from "../controllers/auth.js"
@@ -24,6 +24,37 @@ router.post(
         .withMessage("Password cannot be empty"),
     Validate,
     Register
+)
+
+router.post(
+    "/populate",
+    [
+        check("first_name")
+        .trim()
+        .escape(),
+        check("email")
+        .isEmail()
+        .normalizeEmail(),
+        check("password")
+        .isLength({ min: 1 })
+        .withMessage("Password cannot be empty"),
+        check("age").optional({ nullable: true }).isNumeric(),
+        check("university").optional({ nullable: true }),
+        check("likes").optional({ nullable: true }),
+        check("dislikes").optional({ nullable: true }),
+        check("traits").optional({ nullable: true }),
+        check("coordinates").optional({ nullable: true }).isObject(),
+        check("coordinates.longitude").optional({ nullable: true }).isNumeric(),
+        check("coordinates.latitude").optional({ nullable: true }).isNumeric(),
+        check("sleepTime").optional({ nullable: true }).isNumeric(),
+        check("wakeUpTime").optional({ nullable: true }).isNumeric(),
+        check("dealbreakers").optional({ nullable: true }),
+        check("hobbies").optional({ nullable: true }),
+        check("numberOfGuests").optional({ nullable: true }).isIn(['1', '2', '3', '4+']),
+        check("substances").optional({ nullable: true }),
+        check("budget").optional({ nullable: true }).isNumeric()
+    ],
+    Populate
 )
 
 router.post(
