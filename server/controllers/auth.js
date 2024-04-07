@@ -5,6 +5,83 @@ import User from "../models/User.js"
 //     const user = await User.find({}).sort({createdAt: -1})
 //     res.status(200).json(workouts)
 // }
+/**
+ * @route POST v1/auth/populate
+ * @desc populates a user
+ * @access Public
+ */
+
+
+export async function Populate(req, res) {
+    try {
+        const {
+            first_name, 
+            email, 
+            password, 
+            age, 
+            university, 
+            likes, 
+            dislikes, 
+            traits, 
+            coordinates: { longitude, latitude }, 
+            sleepTime, 
+            wakeUpTime, 
+            dealbreakers, 
+            hobbies, 
+            numberOfGuests, 
+            substances, 
+            budget
+        } = req.body;
+        
+        // create new user
+        const newUser = new User({
+            first_name,
+            email,
+            password,
+            age,
+            university,
+            likes,
+            dislikes,
+            traits,
+            coordinates: { longitude, latitude },
+            sleepTime,
+            wakeUpTime,
+            dealbreakers,
+            hobbies,
+            numberOfGuests,
+            substances,
+            budget
+        });
+
+        // check if exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({
+                status: "failed",
+                data: [],
+                message: "It seems you already have an account, please log in instead.",    
+            });
+        }
+
+
+        const savedUser = await newUser.save();
+        const {role, ...user_data } = savedUser._doc;
+        res.status(200).json({
+            status: "success",
+            data: [user_data],
+            message: "Thank you for registering with us. Your account has been successfully created."
+        })
+        
+    } catch (err) {
+        console.log(err)
+        res.status(500).json({
+            status: "error",
+            code: 500,
+            data: [],
+            message: "Internal Server Error",
+        })
+    }
+}
 
 /**
  * @route POST v1/auth/register
@@ -196,4 +273,20 @@ export async function updateUser (req, res) {
     }
 
     res.status(200).json(user)
+}
+
+export async function randomUser (req, res) {
+    // Get the count of all users
+    User.count().exec(function (err, count) {
+
+    // Get a random entry
+    var random = Math.floor(Math.random() * count)
+  
+    // Again query all users but only fetch one offset by our random #
+    User.findOne().skip(random).exec(
+      function (err, result) {
+        // Tada! random user
+        res.status(200).json(user)
+      })
+  })
 }
