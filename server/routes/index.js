@@ -12,14 +12,13 @@ router.get('/test', requiresAuth(), (req, res) => {
     })
 });
 
-
 // OAuth Login
 router.get('/login', (req, res) => {
   res.oidc.login();
 });
 
 // OAuth Callback
-router.post('/callback', requiresAuth(), (req, res) => {
+router.post('/callback', (req, res) => {
   res.status(200).json({
     status: "success",
     data: [],
