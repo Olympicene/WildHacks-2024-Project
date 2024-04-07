@@ -1,0 +1,15 @@
+body {
+    background-color: #ddf0ff;
+}
+
+.login-title {
+    margin-top: 15%;
+    font-size: 60px;
+    font-family: "Poppins", sans-serif;
+    color: #15328a;
+}
+
+.right{
+    float: right;
+    margin: 3rem;
+}
