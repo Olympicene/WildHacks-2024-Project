@@ -36,7 +36,7 @@ mongoose
   .then(console.log("Connected to database")) // we listen in www.js
   .catch((err) => console.log(err))
 
-app.use(cors({origin: 'http://localhost:3000' , credentials :  true})) // enables CORS
+app.use(cors({origin: 'http://localhost:3001' , credentials :  true})) // enables CORS
 
 // const port = process.env.PORT || 3000;
 // if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
