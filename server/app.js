@@ -6,8 +6,6 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import pkg from 'express-openid-connect';
 const { auth } = pkg;
-import session from "express-session"
-
 
 dotenv.config();
 
@@ -24,6 +22,18 @@ const config = {
   authRequired: false,
   auth0Logout: true,
 };
+
+// === connect to database ===
+// setup
+mongoose.Promise = global.Promise;
+mongoose.set("strictQuery", false);
+mongoose
+  .connect(URI, { // no idea what this does
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(console.log("Connected to database")) // we listen in www.js
+  .catch((err) => console.log(err))
 
 const port = process.env.PORT || 3000;
 if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
