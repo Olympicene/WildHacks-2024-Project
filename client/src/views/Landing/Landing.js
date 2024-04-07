@@ -1,7 +1,18 @@
 import * as React from 'react'
 import { Divider, Image, Button} from 'antd';
+import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
     require("./Landing.css");
+    const navigate = useNavigate();
+
+    const handleLoginClick = () => {
+        navigate('./login')
+      };
+
+      const handleSignupClick = () => {
+        navigate('./sign-up')
+      };
     return (
         <div style={{
             display: 'flex',
@@ -15,8 +26,10 @@ const Landing = () => {
             </h1>
             <p className='p-text'>because great stories start with great roommates.</p>
             <div style={{display:"flex", flexDirection:"column"}}>
-                <Button type="primary" size="large"className='button-login'>Log In</Button>
-                <Button type="primary" size="large"className='button-login'>Create Account</Button>
+                <Button type="primary" size="large"className='button-login'
+                onClick={handleLoginClick}>Log In</Button>
+                <Button type="primary" size="large"className='button-login'
+                onClick={handleSignupClick}>Create Account</Button>
             </div>
 
             </div>
