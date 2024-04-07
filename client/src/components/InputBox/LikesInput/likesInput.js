@@ -2,7 +2,7 @@ import React from 'react';
 import { Card , Input} from 'antd';
 import './likesInput.css';
 
-const LikesInput = ({details}) => {
+const LikesInput = ({onChange, details}) => {
     const cardBodyStyles = {
         padding: '5px',
         margin: '0',
@@ -13,16 +13,16 @@ const LikesInput = ({details}) => {
       <div className="input-likes-container">
         <div className="input-like-container">
         <span className="input-info-title">Likes</span>
-        <Input className="input-info-text" placeholder="" value = {details?.like1}/>
-        <Input className="input-info-text" placeholder="" value = {details?.like2}/>
-        <Input className="input-info-text" placeholder="" value = {details?.like3}/>
+        <Input className="input-info-text" placeholder="" value = {details?.like1} onChange={onChange}/>
+        <Input className="input-info-text" placeholder="" value = {details?.like2} onChange={onChange}/>
+        <Input className="input-info-text" placeholder="" value = {details?.like3} onChange={onChange}/>
         </div>
         <div className="vl"></div>
         <div className="input-dislike-container">
           <span className="input-info-title">Dislikes</span>
-          <Input className="input-info-text" placeholder="" value = {details?.dislike1}/>
-          <Input className="input-info-text" placeholder="" value = {details?.dislike2}/>
-          <Input className="input-info-text" placeholder="" value = {details?.dislike3}/>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike1} onChange={onChange}/>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike2} onChange={onChange}/>
+          <Input className="input-info-text" placeholder="" value = {details?.dislike3} onChange={onChange}/>
         </div>
       </div>
     </Card>

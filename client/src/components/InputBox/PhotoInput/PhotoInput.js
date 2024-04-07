@@ -1,7 +1,6 @@
 import React , { useState } from 'react';
 
 import { Carousel, Upload} from "antd";
-import womanimage from "../../../assets/woman.svg";
 
 const PhotoInput = ({photo}) => {
     require("./PhotoInput.css");

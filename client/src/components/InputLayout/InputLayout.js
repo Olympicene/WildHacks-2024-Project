@@ -7,7 +7,23 @@ import MainInfoInput from '../InputBox/MainInfoInput/maininfoInput';
 import PhotoInput from '../InputBox/PhotoInput/PhotoInput';
 
 const InputLayout = () => {
+    
     require("./InputLayout.css");
+    const [hobbies, setHobbies] = useState('');
+    const [substances, setSubstances] = useState('');
+    const [freqGuests, setFreqGuests] = useState('');
+    const [numGuests, setNumGuests] = useState('');
+    const [traits, setTraits] = useState('');
+    const [dealbreakers, setDealbreakers] = useState('');
+    const [sleep, setSleep] = useState('');
+    const [likes, setLikes] = useState('');
+    const [dislikes, setDislikes] = useState('');
+    const [budget, setBudget] = useState('');
+    const [photo, setPhoto] = useState('');
+    const [name, setName] = useState('');
+    const [age, setAge] = useState('');
+    const [uni, setUni] = useState('');
+    const [roomates, setRoomates] = useState('');
 
         const [formData, setFormData] = useState({
             thehobbies: '',
@@ -29,28 +45,39 @@ const InputLayout = () => {
         };
     
         const handleSubmit = () => {
-            console.log("Profile submitted:", formData);
+            console.log(hobbies);
+            console.log(substances);
+            console.log(traits);
+            console.log(dealbreakers);
+            console.log(sleep);
+            console.log(likes);
+            console.log(budget);
         };
     
 
     return (
         <div className='input-layout-container' style={{ marginLeft: "15vw"}}>
             <div className='input-semi-container'>
-                <InfoInput title="hobbies" details={formData.thehobbies} onInputChange={handleInputChange}/>
-                <GuestInput onInputChange={handleInputChange}/>
-                <InfoInput title="substances" details={formData.thesubstances} onInputChange={handleInputChange}/>
+                <InfoInput title="hobbies" onChange={hobbies => setHobbies(hobbies)}/>
+                <InfoInput title="frequency of guests" onChange={freqGuests => setFreqGuests(freqGuests)}/>
+                <InfoInput title="how many guests" onChange={numGuests => setNumGuests(numGuests)}/>
+                <InfoInput title="substances"onChange={substances => setSubstances(substances)}/>
             </div>
 
             <div className='input-semi-container' style={{alignItems:"center"}} >
-                <PhotoInput onInputChange={handleInputChange}/>
-                <MainInfoInput onInputChange={handleInputChange}/>
-                <LikesInput onInputChange={handleInputChange}/>
+                {/* <PhotoInput onChange={handlePhoto}/> */}
+                <InfoInput title="name" onChange={name => setName(name)}/>
+                <InfoInput title="age" onChange={age => setAge(age)}/>
+                <InfoInput title="university" onChange={uni => setUni(uni)}/>
+                <InfoInput title="roomates" onChange={roomates => setRoomates(roomates)}/>
+                <InfoInput title="likes" onChange={likes => setLikes(likes)}/>
+                <InfoInput title="dislikes" onChange={dislikes => setDislikes(dislikes)}/>
             </div>
 
             <div className='input-semi-container'>
-                <InfoInput title="traits" details={formData.thetraits} onInputChange={handleInputChange}/>
-                <InfoInput title="sleep schedule" details={formData.thesleepschedule} onInputChange={handleInputChange}/>
-                <InfoInput title="dealbreakers" details={formData.thedealbreakers} onInputChange={handleInputChange}/>
+                <InfoInput title="traits" onChange={traits => setTraits(traits)}/>
+                <InfoInput title="sleep schedule" onChange={sleep => setSleep(sleep)}/>
+                <InfoInput title="dealbreakers" onChange={dealbreakers => setDealbreakers(dealbreakers)}/>
                 <button className='buttonSave' onClick={handleSubmit}>Submit Profile</button>
             </div>
         </div>
