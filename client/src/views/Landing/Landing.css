@@ -16,6 +16,7 @@ h3 {
 
 .left{
     width: 33.33%;
+    margin : 0;
 }
 
 .right{
@@ -27,13 +28,29 @@ h3 {
 }
 
 .button{
-    background-color: #d2e4fc;
+    background-color: #17181b;
     width: 8rem;
     height: 3rem;
     border-radius: 8px;
 }
 
+.button-login {
+    background-color: #15328a;
+    width: 70%;
+    height: 4rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    left: 0;
+}
+
 .img{
     margin-left: 50%;
     margin-top: 30%;
+}
+
+.p-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
 }

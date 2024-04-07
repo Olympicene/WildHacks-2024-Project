@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Divider, Image} from 'antd';
+import { Divider, Image, Button} from 'antd';
 const Landing = () => {
     require("./Landing.css");
     return (
@@ -7,17 +7,17 @@ const Landing = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            margin : 0
         }}>
             <div class="left">
             <h1>
                     Tinder for Dawgs
             </h1>
-            <h3>
-                    this will be our slogan but I can't think of one
-                </h3>
-            <button class = "button"  >
-            Sign In Using SSO
-            </button>
+            <p className='p-text'>because great stories start with great roommates.</p>
+            <div style={{display:"flex", flexDirection:"column"}}>
+                <Button type="primary" size="large"className='button-login'>Log In</Button>
+                <Button type="primary" size="large"className='button-login'>Create Account</Button>
+            </div>
 
             </div>
             <div class="mid">
