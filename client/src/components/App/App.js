@@ -5,6 +5,7 @@ import Matches from "../../views/Matches/Matches";
 import MyMap from "../../views/Mapbox/Map";
 import WithNav from "./WithNav";
 import WithoutNav from "./WithoutNav";
+import Profile from "../../views/Profile/Profile";
 
 function App() {
   require('./App.css');
@@ -18,7 +19,7 @@ function App() {
         <Route element={<WithNav />}>
           <Route path="home" element={<Homepage />} />
           <Route path="matches" element={<Matches />} />
-          <Route path="map" element={<MyMap />} />
+          <Route path = "profile" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

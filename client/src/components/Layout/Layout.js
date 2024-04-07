@@ -33,7 +33,8 @@ const Layout = () => {
             dislike1 : "dishes",
             dislike2 : "seafood",
             dislike3 : "soda"
-        }
+        },
+        budget : "$1200"
     }
     require("./Layout.css");
     const hobbiesList = Object.values(dummy.hobbies); 
@@ -60,6 +61,7 @@ const Layout = () => {
                 <Info title="traits" details={dummy.traits}/>
                 <Info title="sleep schedule" details={dummy.sleep}/>
                 <Info title="dealbreakers" details={dummy.dealbreakers}/>
+                <Info title="budget" details={dummy.budget}/>
             </div>
 
             <div>
