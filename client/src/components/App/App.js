@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "../../views/Landing/Landing";
 import Homepage from "../../views/Homepage/Homepage";
 import Matches from "../../views/Matches/Matches";
+import MyMap from "../../views/Mapbox/Map";
 import WithNav from "./WithNav";
 import WithoutNav from "./WithoutNav";
 
@@ -17,6 +18,7 @@ function App() {
         <Route element={<WithNav />}>
           <Route path="home" element={<Homepage />} />
           <Route path="matches" element={<Matches />} />
+          <Route path="map" element={<MyMap />} />
         </Route>
       </Routes>
     </BrowserRouter>
