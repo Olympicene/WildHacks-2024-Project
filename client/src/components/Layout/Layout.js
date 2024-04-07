@@ -40,6 +40,10 @@ const Layout = () => {
 
     return (
         <div className='layout-container'>
+            <div>
+            <a ><img src={require('./ex.png')} class="pic" onClick="moveright()" /></a>
+            </div>
+
             <div className='semi-container'>
                 <Info title="hobbies" details={hobbiesList.join(", ")}/>
                 <Guest value={dummy.guests}/>
@@ -56,6 +60,10 @@ const Layout = () => {
                 <Info title="traits" details={dummy.traits}/>
                 <Info title="sleep schedule" details={dummy.sleep}/>
                 <Info title="dealbreakers" details={dummy.dealbreakers}/>
+            </div>
+
+            <div>
+            <a ><img src={require('./heart.png')} class="pics" onClick="moveLeft()" /></a>
             </div>
 
         </div>
