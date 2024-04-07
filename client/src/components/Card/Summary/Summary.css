@@ -26,16 +26,14 @@
 }
 
 .match-img {
-    height: 15rem;
     margin: 0;
     color: #081015;
     line-height: 160px;
     background: #c7cedb;
-    object-fit: cover;
+    object-fit: contain; 
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
-    border-radius: 1rem;
-    margin-top: 1rem;
+    width: 100%;
+    border-radius: 0.5rem;
 }

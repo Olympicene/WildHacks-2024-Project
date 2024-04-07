@@ -1,12 +1,9 @@
 .layout-container {
-    margin : 20px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
     flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
 }
 
 .semi-container {
@@ -15,5 +12,14 @@
 }
 
 .semi-container > * {
-    margin: 30px 0;
+    margin: 10px 0;
+}
+
+.pic{
+    width: 10rem;
+}
+
+.pics{
+    margin-top: 35px;
+    width: 5rem;
 }

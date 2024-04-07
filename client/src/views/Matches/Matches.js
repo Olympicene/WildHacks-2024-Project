@@ -1,6 +1,5 @@
 import * as React from 'react'
 import SummaryCard from '../../components/Card/Summary/Summary';
-import Navbar from '../../components/NavBar/Navbar';
 
 const Homepage = () => {
     require('./Matches.css');
@@ -10,9 +9,13 @@ const Homepage = () => {
         email : "naansheri@xyz.com"
     }
     return (
-        <div style={{display: 'flex'}}>
-            <Navbar/>
-            <div style={{ marginLeft: "15vw"}}>
+        <div>
+            <div className="match-container">
+                <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
                 <SummaryCard user={dummydata}/>
             </div>
         </div>

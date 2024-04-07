@@ -6,21 +6,23 @@ const MainInfoInput = ({details}) => {
 
   return (
     <Card
-      className='info-title'
+      className='main-info-title'
       size="small"
       bordered={false}
       style={{
-        width: 300
+        width: 300,
+        backgroundColor:"#e9e9e9"
+
       }}
       hoverable 
     >
-      <p className="info-title"> name</p>
+      <p className="main-info-title"> name</p>
        <Input placeholder="" value = {details?.name}/> 
-       <p className="info-title"> age</p>
+       <p className="main-info-title"> age</p>
        <Input placeholder="" value = {details?.age}/>
-       <p className="info-title"> university</p>
+       <p className="main-info-title"> university</p>
        <Input placeholder="" value = {details?.university}/>
-       <p className="info-title"> roomates</p>
+       <p className="main-info-title"> roomates</p>
        <Input placeholder="" value = {details?.roommates}/>
     </Card>
   );

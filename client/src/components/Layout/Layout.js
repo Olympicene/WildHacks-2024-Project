@@ -33,13 +33,18 @@ const Layout = () => {
             dislike1 : "dishes",
             dislike2 : "seafood",
             dislike3 : "soda"
-        }
+        },
+        budget : "$1200"
     }
     require("./Layout.css");
     const hobbiesList = Object.values(dummy.hobbies); 
 
     return (
-        <div className='layout-container' style={{ marginLeft: "15vw"}}>
+        <div className='layout-container'>
+            <div>
+            <a ><img src={require('./ex.png')} class="pic" onClick="moveright()" /></a>
+            </div>
+
             <div className='semi-container'>
                 <Info title="hobbies" details={hobbiesList.join(", ")}/>
                 <Guest value={dummy.guests}/>
@@ -56,6 +61,11 @@ const Layout = () => {
                 <Info title="traits" details={dummy.traits}/>
                 <Info title="sleep schedule" details={dummy.sleep}/>
                 <Info title="dealbreakers" details={dummy.dealbreakers}/>
+                <Info title="budget" details={dummy.budget}/>
+            </div>
+
+            <div>
+            <a ><img src={require('./heart.png')} class="pics" onClick="moveLeft()" /></a>
             </div>
 
         </div>
