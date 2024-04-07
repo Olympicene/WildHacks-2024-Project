@@ -1,5 +1,6 @@
 import express from "express"
 import { Verify } from "../middleware/verify.js";
+import { randomUser } from "../controllers/auth.js";
 
 const router = express.Router();
 
@@ -68,5 +69,8 @@ router.get('/user', Verify, (req, res) => {
     data: [req.user],
   })
 })
+
+
+router.get('/random', Verify, randomUser)
 
 export {router}

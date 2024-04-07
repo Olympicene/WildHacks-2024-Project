@@ -276,17 +276,25 @@ export async function updateUser (req, res) {
 }
 
 export async function randomUser (req, res) {
-    // Get the count of all users
-    User.count().exec(function (err, count) {
+    try {
+        // Get the count of all users
+        const count = await User.countDocuments();
 
-    // Get a random entry
-    var random = Math.floor(Math.random() * count)
-  
-    // Again query all users but only fetch one offset by our random #
-    User.findOne().skip(random).exec(
-      function (err, result) {
-        // Tada! random user
-        res.status(200).json(user)
-      })
-  })
+        // Get a random entry
+        const random = Math.floor(Math.random() * count);
+
+        // Query a random user
+        const result = await User.findOne().skip(random).exec();
+
+        // Send the information of the random user
+        res.status(200).json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            status: 'error',
+            code: 500,
+            data: [],
+            message: "Internal Server Error",
+        });
+    }
 }
