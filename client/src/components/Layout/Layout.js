@@ -13,7 +13,11 @@ const Layout = () => {
             university : "uic",
             roomates : "2",
         },
-        hobbies : "reading, crocheting",
+        hobbies : {
+            hobby1: "reading", 
+            hobby2: "crocheting", 
+            hobby3: "lifting"
+        },
         substances : "no smoking",
         guests : {
             freq : 3,
@@ -32,11 +36,12 @@ const Layout = () => {
         }
     }
     require("./Layout.css");
+    const hobbiesList = Object.values(dummy.hobbies); 
 
     return (
         <div className='layout-container' style={{ marginLeft: "15vw"}}>
             <div className='semi-container'>
-                <Info title="hobbies" details={dummy.hobbies}/>
+                <Info title="hobbies" details={hobbiesList.join(", ")}/>
                 <Guest value={dummy.guests}/>
                 <Info title="substances" details={dummy.substances}/>
             </div>

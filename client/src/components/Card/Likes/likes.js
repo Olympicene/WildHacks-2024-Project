@@ -4,7 +4,7 @@ import './Likes.css';
 
 const Likes = ({details}) => {
     const cardBodyStyles = {
-        padding: '5px',
+        padding: '1px',
         margin: '0',
     };
 

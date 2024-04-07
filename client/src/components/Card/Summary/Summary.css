@@ -1,20 +1,41 @@
-.info-title {
+.main-div {
+    text-align: left;
+}
+
+.match-title {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
-    color: #040316;
-    background-color: #d2e4fc;
+    margin-top: 1rem;
+    color: #78787d;
+    background-color: #bebbcc;
+    padding-left: 1rem;
 }
 
-.info-text {
+.match-text {
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 1.5rem;
     margin : 0;
-    color: #5a569e;
-    background-color: #d2e4fc;
+    color: #2b2742;
+    background-color: #bebbcc;
+    padding-left: 1rem;
+}
 
+.match-img {
+    height: 15rem;
+    margin: 0;
+    color: #081015;
+    line-height: 160px;
+    background: #c7cedb;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border-radius: 1rem;
+    margin-top: 1rem;
 }
