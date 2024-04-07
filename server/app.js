@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import pkg from 'express-openid-connect';
 const { auth } = pkg;
+import session from "express-session"
+
 
 dotenv.config();
 
@@ -15,10 +17,12 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // === config server ===
+
 var app = express();
 const config = {
+  errorOnRequiredAuth: true,
   authRequired: false,
-  auth0Logout: true
+  auth0Logout: true,
 };
 
 const port = process.env.PORT || 3000;
@@ -26,6 +30,7 @@ if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.
   config.baseURL = `https://helping-widely-foal.ngrok-free.app/v1`;
 }
 
+app.use(cors({origin: 'http://localhost:3000' , credentials :  true})) // enables CORS
 app.use(auth(config));
 
 // === connect to database ===
@@ -55,6 +60,9 @@ app.use(cookieParser());
 // === config routes ===
 import { router as indexRouter } from './routes/index.js';
 app.use('/v1', indexRouter);
+
+import { router as authRouter } from './routes/auth.js';
+app.use('/v1/auth', authRouter);
 
 // === view engine setup ===
 app.set('views', `${__dirname}/views`);
