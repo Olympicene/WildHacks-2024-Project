@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card ,Input} from 'antd';
 
-const MainInfoInput = ({details}) => {
+const MainInfoInput = ({onChange, name, age, uni, roomates}) => {
   require('./maininfoInput.css');
-
   return (
     <Card
       className='main-info-title'
@@ -17,13 +16,13 @@ const MainInfoInput = ({details}) => {
       hoverable 
     >
       <p className="main-info-title"> name</p>
-       <Input placeholder="" value = {details?.name}/> 
+       <Input placeholder="" value = {name} onChange={onChange}/> 
        <p className="main-info-title"> age</p>
-       <Input placeholder="" value = {details?.age}/>
+       <Input placeholder="" value = {age} onChange={onChange}/>
        <p className="main-info-title"> university</p>
-       <Input placeholder="" value = {details?.university}/>
+       <Input placeholder="" value = {uni} onChange={onChange}/>
        <p className="main-info-title"> roomates</p>
-       <Input placeholder="" value = {details?.roommates}/>
+       <Input placeholder="" value = {roomates} onChange={onChange}/>
     </Card>
   );
 };

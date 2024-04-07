@@ -1,0 +1,29 @@
+body {
+    background-color: #99bedb;
+    margin : 0;
+    padding : 0
+}
+
+.login-title {
+    margin-top: 15%;
+    font-size: 3rem;
+    font-family: "Poppins", sans-serif;
+    color: #15328a;
+}
+
+.right{
+    float: right;
+    margin: 3rem;
+}
+
+.button-on-login {
+    background-color: #15328a;
+    width: 70%;
+    height: 4rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin : auto
+}
