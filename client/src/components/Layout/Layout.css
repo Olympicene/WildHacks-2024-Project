@@ -14,3 +14,12 @@
 .semi-container > * {
     margin: 10px 0;
 }
+
+.pic{
+    width: 10rem;
+}
+
+.pics{
+    margin-top: 35px;
+    width: 5rem;
+}
