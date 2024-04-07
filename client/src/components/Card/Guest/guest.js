@@ -5,11 +5,11 @@ const GuestFreq = ({value}) => {
 
   return (
     
-    <Radio.Group disabled value={value} className='info-text'>
-      <Radio value={1} className='info-text'>Once a week </Radio>
-      <Radio value={2} className='info-text'>Twice a week</Radio>
-      <Radio value={3} className='info-text'>Thrice a week</Radio>
-      <Radio value={4} className='info-text'>More than three times a week</Radio>
+    <Radio.Group disabled value={value} >
+      <Radio value={1} className='radio-text'>Once a week </Radio>
+      <Radio value={2} className='radio-text'>Twice a week</Radio>
+      <Radio value={3} className='radio-text'>Thrice a week</Radio>
+      <Radio value={4} className='radio-text'>More than three times a week</Radio>
     </Radio.Group>
   );
 };
@@ -17,11 +17,11 @@ const GuestFreq = ({value}) => {
 const GuestNumber = ({value}) => {
 
     return (
-      <Radio.Group disabled value={value} className='info-text'>
-        <Radio value={1} className='info-text'>1</Radio>
-        <Radio value={2} className='info-text'>2</Radio>
-        <Radio value={3} className='info-text'>3</Radio>
-        <Radio value={4} className='info-text'>4+</Radio>
+      <Radio.Group disabled value={value}>
+        <Radio value={1} className='radio-text'>1</Radio>
+        <Radio value={2} className='radio-text'>2</Radio>
+        <Radio value={3} className='radio-text'>3</Radio>
+        <Radio value={4} className='radio-text'>4+</Radio>
       </Radio.Group>
     );
   };
