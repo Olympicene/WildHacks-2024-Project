@@ -36,7 +36,7 @@ const GuestNumber = () => {
     );
   };
 
-const App = () => {
+const Guest = () => {
     require('./guest.css');
   
     return (
@@ -57,5 +57,5 @@ const App = () => {
     );
   };
 
-export default App;
+export default Guest;
 
