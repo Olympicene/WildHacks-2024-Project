@@ -1,17 +1,63 @@
 import * as React from 'react'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import { Divider, Image, Button} from 'antd';
 import { Form, Input } from 'antd';
 
 const LoginPage = () => {
 
-    require('./LoginPage.css');
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+      email: '',
+      password: '',
+    });
 
-    const onFinish = (values) => {
+    const [errors, setErrors] = useState('');
+
+    const handleSubmit = async (values) => {
         console.log('Success:', values);
+        await setFormData({email:values.email, password: values.password});
+        console.log(JSON.stringify(formData))
+
+      try {
+        const response = await fetch('http://localhost:3000/v1/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+          credentials: 'include'
+        });
+  
+        if (!response.ok) {
+          let res = await response.json()
+          console.log(res)
+
+          if ('error' in res) {
+            // validator error
+            setErrors(res.error['undefined'])
+          } else {
+            // account error
+            setErrors(res.message)
+          }
+
+          throw new Error('Login failed');
+        }
+  
+        const data = await response.json();
+        navigate('/home')
+
+      } catch (error) {
+        console.error('Error:', error);
+      }
       };
+
+
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
+
+    require('./LoginPage.css');
 
     return (
         <div style={{
@@ -37,7 +83,7 @@ const LoginPage = () => {
                 initialValues={{
                 remember: true,
                 }}
-                onFinish={onFinish}
+                onFinish={handleSubmit}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
