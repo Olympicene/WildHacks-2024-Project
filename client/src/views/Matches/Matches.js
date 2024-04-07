@@ -1,14 +1,14 @@
 import * as React from 'react'
 import Layout from '../../components/Layout/Layout';
 import Navbar from '../../components/NavBar/Navbar';
+import MainInfo2 from '../../components/Card/Summary/Summary';
 
 const Homepage = () => {
-    require('./Homepage.css');
-    require('./Homepage.css');
+    require('./Matches.css');
     return (
-        <div style={{display: 'flex'}}>
-            <Navbar/>
-            <Layout/>
+        <div>
+            <p>This is matches page</p>
+            <MainInfo2/>
         </div>
     )
 }
