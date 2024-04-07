@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Card } from "antd";
+import { Card,Input } from "antd";
 
-const Info = ({title,details}) => {
-    require("./Info.css");
+const InfoInput = ({details}) => {
+    require("./InfoInput.css");
 
     const cardBodyStyles = {
         padding: '5px', 
@@ -11,13 +11,13 @@ const Info = ({title,details}) => {
       };
 
     return (
-        <div className='info-div'>
+        <div>
             <Card bordered={false} hoverable={true} style={{ width: 300 }} styles={{ body: cardBodyStyles }} className='info-text-card'>
-            <p className='info-title'>{title}</p>
-            <p className='info-text'>{details}</p>
+            <p className='info-title'>{details?.title}</p>
+            <Input placeholder="" value = {details?.text}/> 
             </Card>
         </div>
         );
     }
-export default Info;
+export default InfoInput;
 

@@ -1,0 +1,19 @@
+.carousel-img {
+    height: 15rem;
+    width: auto;
+    margin: 0;
+    color: #081015;
+    line-height: 160px;
+    background: #c7cedb;
+    object-fit: cover;
+}
+
+.carousel-wrapper {
+    width : 25rem;
+}
+.carousel-wrapper .slick-dots li button {
+    background-color: rgb(48, 29, 72); /* Change this to your desired dot color */
+  }
+.pict{
+    width: 500rem;
+}
