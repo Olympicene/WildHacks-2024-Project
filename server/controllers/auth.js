@@ -182,7 +182,6 @@ export async function getUser (req, res){
     }
 
     res.status(200).json(user)
-
 }
 
 export async function updateUser (req, res) {

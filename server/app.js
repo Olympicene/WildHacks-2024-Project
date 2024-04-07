@@ -29,7 +29,10 @@ const config = {
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(URI)
+  .connect(URI, { // no idea what this does
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(console.log("Connected to database")) // we listen in www.js
   .catch((err) => console.log(err))
 
@@ -48,12 +51,23 @@ app.use(cors({origin: 'http://localhost:3000' , credentials :  true})) // enable
 //   next();
 // });
 
+// view engine setup
+app.set('views', `${__dirname}/views`);
+app.set('view engine', 'jade');
+app.use(express.static(`${__dirname}/views`));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+import { router as authRouter } from './routes/auth.js';
+app.use('/v1/auth', authRouter);
+
 // === config routes ===
 import { router as indexRouter } from './routes/index.js';
 app.use('/v1', indexRouter);
 
-import { router as authRouter } from './routes/auth.js';
-app.use('/v1/auth', authRouter);
+
 
 // === view engine setup ===
 app.set('views', `${__dirname}/views`);
