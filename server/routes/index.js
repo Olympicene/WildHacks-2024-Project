@@ -1,22 +1,31 @@
 import express from "express"
+import pkg from 'express-openid-connect';
+const { requiresAuth, attemptSilentLogin } = pkg;
 var router = express.Router();
 
-/* GET home page. */
-router.get('/v1', (req, res) => {
-  try {
-    // res.render('index', { title: 'Express' });
+// Test Page
+router.get('/test', requiresAuth(), (req, res) => {
     res.status(200).json({
       status: "success",
       data: [],
-      message: "Welcome to our API homepage!",
+      message: "You are successfully connected to our API!",
     })
-
-  } catch (err) {
-    res.status(500).json({
-      status: "error",
-      message: "Internal Server Error"
-    })
-  }
 });
+
+
+// OAuth Login
+router.get('/login', (req, res) => {
+  res.oidc.login();
+});
+
+// OAuth Callback
+router.post('/callback', requiresAuth(), (req, res) => {
+  res.status(200).json({
+    status: "success",
+    data: [],
+    message: "Welcome to our API homepage!",
+  })
+});
+
 
 export {router}
