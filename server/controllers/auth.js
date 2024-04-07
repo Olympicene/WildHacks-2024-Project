@@ -14,12 +14,11 @@ import User from "../models/User.js"
 
 export async function Register(req, res) {
     try {
-        const {first_name, last_name, email, password} = req.body
+        const {first_name, email, password} = req.body
 
         // create new user
         const newUser = new User({
             first_name, 
-            last_name, 
             email, 
             password,
         });
@@ -139,7 +138,6 @@ import Blacklist from "../models/Blacklist.js";
 export async function Logout(req, res) {
     try {
 
-        console.log("got here")
         const authHeader = req.headers['cookie']
 
         if (!authHeader) {

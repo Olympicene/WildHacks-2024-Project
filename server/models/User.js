@@ -7,19 +7,9 @@ import { SECRET_ACCESS_TOKEN } from '../config/index.js'
 //define user structure
 const UserSchema = new mongoose.Schema(
     {
-        username: {
-            type: String,
-            required: "Your username is required",
-            max: 25,
-        },
         first_name: {
             type: String,
             required: "Your first name is required",
-            max: 25,
-        },
-        last_name: {
-            type: String,
-            required: "Your last name is required",
             max: 25,
         },
         email: {
@@ -35,11 +25,29 @@ const UserSchema = new mongoose.Schema(
             select: false,
             max: 25,
         },
-        role: {
-            type: String,
-            required: true,
-            default: "0x01",
+        age: { type: Number },
+        university: { type: String },
+        likes: [{ type: String }],
+        dislikes: [{ type: String }],
+        traits: { type: String },
+        coordinates: {
+            longitude: {
+                type: Number,
+            },
+            latitude: {
+                type: Number,
+            }
         },
+        sleepTime: { type: String },
+        wakeUpTime: { type: String },
+        dealbreakers: { type: String },
+        hobbies: [{ type: String }],
+        numberOfGuests: {
+            type: String,
+            enum: ['1', '2', '3', '4+',],
+        },
+        substances: { type: String },
+        budget: { type: Number },
     },
     {timestamps: true}
 );

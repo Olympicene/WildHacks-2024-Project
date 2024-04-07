@@ -5,6 +5,7 @@ import express from "express"
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import pkg from 'express-openid-connect';
+import {PORT, URI} from "./config/index.js"
 const { auth } = pkg;
 
 dotenv.config();
@@ -28,44 +29,24 @@ const config = {
 mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(URI, { // no idea what this does
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(URI)
   .then(console.log("Connected to database")) // we listen in www.js
   .catch((err) => console.log(err))
-
-const port = process.env.PORT || 3000;
-if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
-  config.baseURL = `https://helping-widely-foal.ngrok-free.app/v1`;
-}
 
 app.use(cors({origin: 'http://localhost:3000' , credentials :  true})) // enables CORS
-app.use(auth(config));
 
-// === connect to database ===
-// setup
-mongoose.Promise = global.Promise;
-mongoose.set("strictQuery", false);
-mongoose
-  .connect(process.env.URI)
-  .then(console.log("Connected to database")) // we listen in www.js
-  .catch((err) => console.log(err))
+// const port = process.env.PORT || 3000;
+// if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
+//   config.baseURL = `https://helping-widely-foal.ngrok-free.app/v1`;
+// }
+
+// app.use(auth(config));
 
 // Middleware to make the `user` object available for all views
-app.use((req, res, next) => {
-  res.locals.user = req.oidc.user;
-  next();
-});
-
-// view engine setup
-app.set('views', `${__dirname}/views`);
-app.set('view engine', 'jade');
-app.use(express.static(`${__dirname}/views`));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use((req, res, next) => {
+//   res.locals.user = req.oidc.user;
+//   next();
+// });
 
 // === config routes ===
 import { router as indexRouter } from './routes/index.js';

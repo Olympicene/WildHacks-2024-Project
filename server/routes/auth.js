@@ -12,19 +12,9 @@ router.post(
         .isEmail()
         .withMessage("Please enter a valid email address")
         .normalizeEmail(),
-    check("username")
-        .notEmpty()
-        .withMessage("Please enter a username")
-        .trim()
-        .escape(),
     check("first_name")
         .notEmpty()
         .withMessage("Your first name is required")
-        .trim()
-        .escape(),
-    check("last_name")
-        .notEmpty()
-        .withMessage("Your last name is required")
         .trim()
         .escape(),
     check("password")
@@ -49,8 +39,5 @@ router.post(
 
 router.get('/logout', Logout);
 
-router.get('/:id/info', Validate, getUser);
-
-router.patch('/:id/update/', Validate, updateUser);
 
 export { router }
