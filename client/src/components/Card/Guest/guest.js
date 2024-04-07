@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Radio } from 'antd';
 
-const GuestFreq = () => {
+const GuestFreq = ({value}) => {
 
-  const [value, setValue] = useState(1);
-  const onChange = (e) => {
-    console.log('radio checked', e.target.value);
-    setValue(e.target.value);
-  };
   return (
     
-    <Radio.Group disabled onChange={onChange} value={value} className='info-text'>
+    <Radio.Group disabled value={value} className='info-text'>
       <Radio value={1} className='info-text'>Once a week </Radio>
       <Radio value={2} className='info-text'>Twice a week</Radio>
       <Radio value={3} className='info-text'>Thrice a week</Radio>
@@ -19,15 +14,10 @@ const GuestFreq = () => {
   );
 };
 
-const GuestNumber = () => {
+const GuestNumber = ({value}) => {
 
-    const [value, setValue] = useState(1);
-    const onChange = (e) => {
-      console.log('radio checked', e.target.value);
-      setValue(e.target.value);
-    };
     return (
-      <Radio.Group disabled onChange={onChange} value={value} className='info-text'>
+      <Radio.Group disabled value={value} className='info-text'>
         <Radio value={1} className='info-text'>1</Radio>
         <Radio value={2} className='info-text'>2</Radio>
         <Radio value={3} className='info-text'>3</Radio>
@@ -36,23 +26,27 @@ const GuestNumber = () => {
     );
   };
 
-const Guest = () => {
-    require('./guest.css');
+const Guest = ({value}) => {
+    require('./Guest.css');
   
+    const cardBodyStyles = {
+      padding: '5px', 
+      margin: '0', 
+    };
     return (
         <Card className="info-title"
-        size="small"
         style={{
           width: 300,
         }}
+        styles={{ body: cardBodyStyles }} 
         hoverable
       >
 
-        <p>Guests</p>
+        <p>guests</p>
         <p className="info-text-question">How often do you have guests?</p>
-        <GuestFreq/> 
+        <GuestFreq value={value.freq}/> 
         <p className="info-text-question">How many guests do you have?</p>
-        <GuestNumber/> 
+        <GuestNumber value={value.num}/> 
       </Card>
     );
   };

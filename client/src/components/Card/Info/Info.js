@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Card } from "antd";
 
-const Info = ({details}) => {
+const Info = ({title,details}) => {
     require("./Info.css");
 
     const cardBodyStyles = {
@@ -13,8 +13,8 @@ const Info = ({details}) => {
     return (
         <div>
             <Card bordered={false} hoverable={true} style={{ width: 300 }} styles={{ body: cardBodyStyles }} className='info-text-card'>
-            <p className='info-title'>{details.title}</p>
-            <p className='info-text'>{details.text}</p>
+            <p className='info-title'>{title}</p>
+            <p className='info-text'>{details}</p>
             </Card>
         </div>
         );

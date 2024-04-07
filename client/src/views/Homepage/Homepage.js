@@ -1,13 +1,11 @@
 import * as React from 'react'
-import Info from '../../components/Card/Info/Info';
-import MainInfo from '../../components/Card/MainInfo/maininfo';
-import App from '../../components/NavBar/Navbar';
+import Layout from '../../components/Layout/Layout';
 
 const Homepage = () => {
     require('./Homepage.css');
     return (
         <div>
-            <App/>
+            <Layout/>
         </div>
     )
 }
