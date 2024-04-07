@@ -1,17 +1,66 @@
 import * as React from 'react'
+import { useState } from 'react';
 import { Divider, Image, Button} from 'antd';
 import { Form, Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
 
+    const navigate = useNavigate();
+    const [signData, setSignData] = useState({
+      first_name:'',
+      email: '',
+      password: '',
+    });
+
+    const [errors, setErrors] = useState('');
+
+    const handleFormChange = (changedValues, allValues) => {
+        console.log('Success:', allValues);
+        setSignData({first_name: allValues.first_name, email:allValues.email, password: allValues.password});
+    }
+
+    const handleSubmit = async () => {
+        console.log(JSON.stringify(signData))
+
+      try {
+        const response = await fetch('http://localhost:3000/v1/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(signData),
+          credentials: 'include'
+        });
+  
+        if (!response.ok) {
+          let res = await response.json()
+          console.log(res)
+
+          if ('error' in res) {
+            // validator error
+            setErrors(res.error['undefined'])
+          } else {
+            // account error
+            setErrors(res.message)
+          }
+
+          throw new Error('Sign In failed');
+        }
+  
+        const data = await response.json();
+        navigate('/home')
+
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+
     require('./SignUpPage.css');
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+    const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+    };
 
     return (
         <div className='main-login-body' style={{
@@ -37,13 +86,14 @@ const SignUpPage = () => {
                 initialValues={{
                 remember: true,
                 }}
-                onFinish={onFinish}
+                onFinish={handleSubmit}
                 onFinishFailed={onFinishFailed}
+                onValuesChange={handleFormChange}
                 autoComplete="off"
             >
                 <Form.Item
-                label="first name"
-                name="first name"
+                label="first_name"
+                name="first_name"
                 rules={[
                     {
                     required: true,
