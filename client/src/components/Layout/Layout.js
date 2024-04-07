@@ -28,7 +28,7 @@ const Layout = () => {
         sleep : "11PM to 7AM",
         allLikes : {
             like1 : "takeout",
-            like2 : "clean room",
+            like2 : "dogs",
             like3 : "music",
             dislike1 : "dishes",
             dislike2 : "seafood",

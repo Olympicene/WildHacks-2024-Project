@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "../../views/Landing/Landing";
 import Homepage from "../../views/Homepage/Homepage";
 import Matches from "../../views/Matches/Matches";
-import MyMap from "../../views/Mapbox/Map";
 import WithNav from "./WithNav";
 import WithoutNav from "./WithoutNav";
 import Profile from "../../views/Profile/Profile";

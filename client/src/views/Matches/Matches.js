@@ -17,6 +17,8 @@ const Homepage = () => {
                 <SummaryCard user={dummydata}/>
                 <SummaryCard user={dummydata}/>
                 <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
+                <SummaryCard user={dummydata}/>
             </div>
         </div>
     )

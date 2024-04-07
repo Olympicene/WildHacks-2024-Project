@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Carousel } from "antd";
-import womanimage from "../../../assets/woman.svg";
+import contactImage from "../../../assets/contact.jpg";
 
 const Photo = ({photo}) => {
     require("./Photo.css");
@@ -10,13 +10,13 @@ const Photo = ({photo}) => {
         <div className='carousel-wrapper'>
             <Carousel>
             <div>
-                <img className="carousel-img"src={womanimage}></img>
+                <img className="carousel-img"src={contactImage}></img>
             </div>
             <div>
-                <img className="carousel-img"src={womanimage}></img>
+                <img className="carousel-img"src={contactImage}></img>
             </div>
             <div>
-                <img className="carousel-img"src={womanimage}></img>
+                <img className="carousel-img"src={contactImage}></img>
             </div>
             </Carousel>
         </div>

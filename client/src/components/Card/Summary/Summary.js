@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from 'antd';
-import womanimage from "../../../assets/woman.svg";
+import contactImage from "../../../assets/contact.jpg";
 
 const SummaryCard = ({user}) => {
   require('./Summary.css');
@@ -17,7 +17,7 @@ const SummaryCard = ({user}) => {
           }}
           hoverable 
         >
-            <img className="match-img"src={womanimage}></img>
+            <img className="match-img"src={contactImage}></img>
             <p className="match-title">{user.name}, {user.age} </p>
             <p className="match-text">{user.email}</p>
         </Card>
