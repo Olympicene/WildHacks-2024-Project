@@ -67,8 +67,6 @@ app.use('/v1/auth', authRouter);
 import { router as indexRouter } from './routes/index.js';
 app.use('/v1', indexRouter);
 
-
-
 // === view engine setup ===
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'jade');
